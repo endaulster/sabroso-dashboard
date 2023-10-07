@@ -154,5 +154,46 @@ ul #side-options {
     padding: 20px;
 }
 
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-top: 0px;
+    font-size: 0.9em;
+    min-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1px 8px 18px 6px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 1px 8px 18px 6px rgba(0,0,0,0.41);
+    -moz-box-shadow: 1px 8px 18px 6px rgba(0,0,0,0.41);
+}
+
+.table th {
+    background-color: #8500a0;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+
+.table th, table td {
+    padding: 6px 8px;
+}
+
+.table tr {
+    border-bottom: 2px solid #8500a03b;
+    background-color: white;
+}
+
+.table tr:nth-of-type(even) {
+    background-image: radial-gradient(circle, #ffffff, #f4f4f4, #e9e9e9, #dedede, #d3d3d3);
+}
+
+.table tr:last-of-type {
+    border-bottom: 2px solid #8500a0;
+}
+
+
 
 /* ////// FONT CHANGE*/
