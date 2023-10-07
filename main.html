@@ -30,7 +30,7 @@
                     <button id="search-button" type="submit">
                         <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>airplane-search</title><path d="M9.55 9.63L10.9 12.22C11.5 11.17 12.41 10.31 13.5 9.74L12.73 6.45L16.62 2.56C17.2 1.97 17.2 1 16.62 .438S15.08-.148 14.5 .438L10.61 4.33L1.41 2.21L0 3.62L7.43 7.5L3.54 11.4L1.06 11.05L0 12.11L3.18 13.87L4.95 17.06L6 16L5.66 13.5L9.55 9.63M16.5 11C19 11 21 13 21 15.5C21 16.38 20.75 17.21 20.31 17.9L23.39 21L22 22.39L18.88 19.32C18.19 19.75 17.37 20 16.5 20C14 20 12 18 12 15.5S14 11 16.5 11M16.5 13C15.12 13 14 14.12 14 15.5S15.12 18 16.5 18 19 16.88 19 15.5 17.88 13 16.5 13" /></svg>
                     </button>
-                    <input type="text" name="search" id="search" placeholder="WJ42069...">
+                    <input type="text" name="search" id="search" onkeyup="tableSearch()" placeholder="WJ42069...">
                 </form>
             </div>
             
@@ -40,25 +40,92 @@
 
         </div>
         <div class="complaints">
-            <div class="caso">
-                <p class="title">RODRIGUEZ AMANDA</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-              </div>
-              <div class="caso">
-                <p class="title">RODRIGUEZ AMANDA</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-              </div>
-              <div class="caso">
-                <p class="title">RODRIGUEZ AMANDA</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-              </div>
-              APELLIDO
-              MARBETE
-              
-       
-       
-            </div>
+            
+            <table class="table" id="laTabla" data-filter-control="true" data-show-search-clear-button="true">
+                <tr>
+                    <th>DATE</th>
+                    <th>FULL NAME</th>
+                    <th>TERMMINAL</th>
+                    <th>BAGTAG</th>
+                    <th>RSVR COD.</th>
+                    <th>DESCR</th>
+                    <th>FLT NUM</th>
+                    <th>CELLPHONE</th>
+                    <th>EMAIL</th>
+                    <th>STATUS</th>
+                </tr>
+                <tr>
+                    <td>23OCT23</td>
+                    <td>RODRIGUEZ MIRTA</td>
+                    <td>DOMESTIC</td>
+                    <td>WJ0974794749</td>
+                    <td>ICUK3U</td>
+                    <td>TELA ROSA</td>
+                    <td>WJ3270</td>
+                    <td>1155272037</td>
+                    <td>MIRTA.RODRIGUEZ@GMAIL.COM</td>
+                    <td>ENVIAR A SLA</td>
+                </tr>
+                <tr>
+                    <td>12NOV23</td>
+                    <td>GONZALEZ JUAN</td>
+                    <td>INTERNATIONAL</td>
+                    <td>WJ0974794750</td>
+                    <td>ICUK4V</td>
+                    <td>TELA AZUL</td>
+                    <td>WJ3271</td>
+                    <td>1155272038</td>
+                    <td>JUAN.GONZALEZ@YAHOO.COM</td>
+                    <td>ENVIAR A SCL</td>
+                </tr>
+                <tr>
+                    <td>05DIC23</td>
+                    <td>LÓPEZ ANA</td>
+                    <td>DOMESTIC</td>
+                    <td>WJ0974794751</td>
+                    <td>ICUK5W</td>
+                    <td>TELA VERDE</td>
+                    <td>WJ3272</td>
+                    <td>1155272039</td>
+                    <td>ANA.LOPEZ@OUTLOOK.COM</td>
+                    <td>ENVIAR A BRC</td>
+
+                </tr>
+            </table>
+
+        </div>
+           
     </div>
+
+    <script type="application/javascript">
+        
+        function tableSearch () {
+            let input, filter, table, tr, td , i, txtValue;
+            // Init variables
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("laTabla");
+            tr = table.getElementsByTagName("tr");
+            // systems
+            for (let i = 0; i < tr.length; i++ ){
+                td = tr[i].getElementsByTagName("td");
+                for (j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        break;
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+    
+    
+    
+    </script>
 
 </body>
 </html>

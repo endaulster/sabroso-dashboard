@@ -151,15 +151,8 @@ ul #side-options {
     box-shadow: 10px 10px 33px -11px rgba(0,0,0,0.75) inset;
     -webkit-box-shadow: 10px 10px 33px -11px rgba(0,0,0,0.75) inset;
     -moz-box-shadow: 10px 10px 33px -11px rgba(0,0,0,0.75) inset;
-    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
     padding: 20px;
 }
 
-.caso {
-    
-    background-color: white;
-    height: 100px;
-
-}
 
 /* ////// FONT CHANGE*/
